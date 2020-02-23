@@ -1,5 +1,7 @@
 const toString = Object.prototype.toString
 
-export const isDate = (date: any): date is Date => toString.call(date) === '[object Date]'
+export const isDate = (val: any): val is Date => toString.call(val) === '[object Date]'
 
-export const isObject = (object: any): object is Object => object && typeof object === 'object'
+export const isObject = (val: any): val is Object => val && typeof val === 'object'
+
+export const isPlainObject = (val: any): val is Object => toString.call(val) === '[object Object]'
