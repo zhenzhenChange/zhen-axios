@@ -1,28 +1,6 @@
-// import axios, {AxiosError} from '../../src/index'
-// import { AxiosTransformer } from '../../src/types'
-
-/* const instance = axios.create({
-  transformRequest: [(function (data) {
-    console.log(data, 'data')
-    data.b = 3
-    return data
-  }), ...(axios.defaults.transformRequest as AxiosTransformer[])]
-}) */
-
-// instance({
-//   url: '/base/post',
-//   data: {
-//     a: 2
-//   },
-//   method: 'post'
-// }).then((res) => {
-//   console.log(res, 'res')
-// })
-
 import zhenAxios from '../../src/index'
 
 /* GET 请求示例 */
-/* 
 zhenAxios({
   method: 'get',
   url: '/base/get',
@@ -36,7 +14,6 @@ zhenAxios({
 })
 
 const date = new Date()
-
 zhenAxios({
   method: 'get',
   url: '/base/get',
@@ -66,10 +43,9 @@ zhenAxios({
   url: '/base/get?foo=bar',
   params: { bar: 'zhenzhen' }
 })
- */
 
 /* POST 请求示例 */
-/* zhenAxios({
+zhenAxios({
   method: 'post',
   url: '/base/post',
   data: { foo: 'foo', bar: 'bar' }
@@ -89,17 +65,18 @@ zhenAxios({
   url: '/base/post',
   data: searchParams
 })
- */
-// zhenAxios({
-//   method: 'post',
-//   url: '/base/post',
-//   headers: {
-//     'content-type': 'application/json',
-//     Accept: 'application/json, text/plain, */*'
-//   },
-//   data: { json: 'json', bar: 'jsonBar' }
-// })
 
+zhenAxios({
+  method: 'post',
+  url: '/base/post',
+  headers: {
+    'content-type': 'application/json',
+    Accept: 'application/json, text/plain, */*'
+  },
+  data: { json: 'json', bar: 'jsonBar' }
+})
+
+/* Promise 请求示例 */
 zhenAxios({
   method: 'post',
   url: '/base/post',
