@@ -51,9 +51,17 @@ router.get('/error/get', (req, res) => {
   }
 })
 
-router.get('/error/timeout', (req, res) => {
-  setTimeout(() => res.json({ msg: 'Hello Timeout' }), 3000)
-})
+router.get('/error/timeout', (req, res) => setTimeout(() => res.json({ msg: 'Timeout' }), 3000))
+
+router.get('/extend/get', (req, res) => res.json({ msg: 'ok' }))
+router.get('/extend/user', (req, res) => res.json({ result: { username: 'zhenzhen' } }))
+router.head('/extend/head', (req, res) => res.end())
+router.delete('/extend/delete', (req, res) => res.end())
+router.options('/extend/options', (req, res) => res.end())
+
+router.put('/extend/put', (req, res) => res.json(req.body))
+router.post('/extend/post', (req, res) => res.json(req.body))
+router.patch('/extend/patch', (req, res) => res.json(req.body))
 
 app.use(router)
 

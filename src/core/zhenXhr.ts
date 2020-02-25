@@ -1,6 +1,6 @@
-import { createError } from './helpers/error'
-import { parseHeaders } from './helpers/headers'
-import { AxiosConfig, AxiosPromise, AxiosResult } from './types/index'
+import { createError } from '../helpers/error'
+import { parseHeaders } from '../helpers/headers'
+import { AxiosConfig, AxiosPromise, AxiosResult } from '../types'
 
 const zhenXhr = (config: AxiosConfig): AxiosPromise =>
   new Promise((resolve, reject) => {
@@ -17,7 +17,7 @@ const zhenXhr = (config: AxiosConfig): AxiosPromise =>
       else reject(createError(config, failedMsg, null, request, response))
     }
 
-    request.open(method.toUpperCase(), url, true)
+    request.open(method.toUpperCase(), url!, true)
 
     request.onreadystatechange = () => {
       if (request.readyState !== 4) return
