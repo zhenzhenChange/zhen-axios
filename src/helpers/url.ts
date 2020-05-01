@@ -16,7 +16,7 @@ export function buildURL(url: string, params?: any): string {
 
   const parts: Array<string> = []
 
-  // 不使用for-in遍历，因为无需遍历出原型上的属性
+  // 可以不使用for-in遍历，因为无需遍历出手动加在原型上的属性
   Object.keys(params).forEach(key => {
     const value = params[key]
 
